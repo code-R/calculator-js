@@ -3,7 +3,6 @@
   "private": true,
   "dependencies": {
     "bootstrap-sass-official": "~3.2.0",
-    "modernizr": "~2.8.2",
-    "jasmine": "~2.0.4"
+    "modernizr": "~2.8.2"
   }
 }
