@@ -1,8 +1,8 @@
 var calculator = {
-  'equals': function(btn) {
+  'evaluate': function() {
     return eval($("#cal-input").val());
   },
-  'cancel': function(btn) {
+  'cancel': function() {
     return '';
   },
   'regular': function(btn) {

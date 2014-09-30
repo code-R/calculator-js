@@ -14,7 +14,7 @@ Handlebars.registerHelper('btn_class', function(data) {
   }
 });
 
-var data1 = {
+var row1 = {
   data: [{
     btn_val: '7'
   }, {
@@ -27,7 +27,7 @@ var data1 = {
   }]
 }
 
-var data2 = {
+var row2 = {
   data: [{
     btn_val: '4'
   }, {
@@ -40,7 +40,7 @@ var data2 = {
   }]
 }
 
-var data3 = {
+var row3 = {
   data: [{
     btn_val: '1'
   }, {
@@ -53,7 +53,7 @@ var data3 = {
   }]
 }
 
-var data4 = {
+var row4 = {
   data: [{
     btn_val: '0'
   }, {
@@ -65,14 +65,14 @@ var data4 = {
   }, {
     btn_val: '=',
     is_operator: true,
-    btn_function: 'equals'
+    btn_function: 'evaluate'
   }]
 }
 
 var source = $("#calc-btn").html();
 var template = Handlebars.compile(source);
 
-$('.calculator').append(template(data1));
-$('.calculator').append(template(data2));
-$('.calculator').append(template(data3));
-$('.calculator').append(template(data4));
+$('.calculator').append(template(row1));
+$('.calculator').append(template(row2));
+$('.calculator').append(template(row3));
+$('.calculator').append(template(row4));
