@@ -28,7 +28,7 @@
     <script id="calc-btn" type="text/x-handlebars-template">
       <div class="row">
         {{#data}}
-          <button type="button" class="btn btn-default {{btn_class}}" data-btn_function="{{btn_method this}}" value="{{btn_val}}">{{btn_val}}</button>
+          <button type="button" class="btn btn-default {{btn_class this}}" data-btn_function="{{btn_method this}}" value="{{btn_val}}">{{btn_val}}</button>
         {{/data}}
       </div>
     </script>
