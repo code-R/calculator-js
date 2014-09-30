@@ -25,6 +25,14 @@
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
+    <script id="calc-btn" type="text/x-handlebars-template">
+      <div class="row">
+        {{#data}}
+          <button type="button" class="btn btn-default operand" value="{{btn_val}}">{{btn_val}}</button>
+        {{/data}}
+      </div>
+    </script>
+
 
     <div class="container">
       <div class="header">
@@ -47,30 +55,7 @@
               </div>
             </div>
           </div>
-          <div class="row">
-            <button type="button" class="btn btn-default operand" value="7">7</button>
-            <button type="button" class="btn btn-default operand" value="8">8</button>
-            <button type="button" class="btn btn-default operand" value="9">9</button>
-            <button type="button" class="btn btn-default operator" value="+">+</button>
-          </div>
-          <div class="row">
-            <button type="button" class="btn btn-default operand" value="4">4</button>
-            <button type="button" class="btn btn-default operand" value="5">5</button>
-            <button type="button" class="btn btn-default operand" value="6">6</button>
-            <button type="button" class="btn btn-default operator" value="-">-</button>
-          </div>
-          <div class="row">
-            <button type="button" class="btn btn-default operand" value="1">1</button>
-            <button type="button" class="btn btn-default operand" value="2">2</button>
-            <button type="button" class="btn btn-default operand" value="3">3</button>
-            <button type="button" class="btn btn-default operator" value="*">*</button>
-          </div>
-          <div class="row">
-            <button type="button" class="btn btn-default operand" value="0">0</button>
-            <button type="button" class="btn btn-default" value="."> . </button>
-            <button type="button" class="btn btn-default operator" value="c">C</button>
-            <button type="button" class="btn btn-default operator" value="=">=</button>
-          </div>
+
         </div>
       </div>
 
@@ -104,6 +89,7 @@
     </script>
 
         <!-- build:js({app,.tmp}) scripts/main.js -->
+        <script src="scripts/handlebars.js"></script>
         <script src="scripts/main.js"></script>
         <!-- endbuild -->
 </body>
