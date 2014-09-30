@@ -1,90 +1,23 @@
+var calculator = {
+  'equals': function(btn) {
+    return eval($("#cal-input").val());
+  },
+  'cancel': function(btn) {
+    return '';
+  },
+  'regular': function(btn) {
+    return $("#cal-input").val() + btn.val();
+  }
+}
+
 $(".operand").click(function() {
-  var x = $("#cal-input").val() + $(this).val();
-  $("#cal-input").val(x);
+  var output = $("#cal-input").val() + $(this).val();
+  $("#cal-input").val(output);
 });
 
 $(".operator").click(function() {
-  var operator = $(this).val();
-  var x = parseInt($("#cal-input").val()) + operator;
-
-  if (operator == '=') {
-    output = eval($("#cal-input").val());
-    $("#cal-input").val(output);
-  } else if (operator == 'c') {
-    $("#cal-input").val('');
-  } else {
-    $("#cal-input").val(x);
-  }
+  var btn = $(this);
+  var btn_function = btn.data('btn_function');
+  var output = calculator[btn_function](btn);
+  $("#cal-input").val(output);
 });
-
-var source = $("#calc-btn").html();
-var template = Handlebars.compile(source);
-
-var data1 = {
-  data: [{
-    btn_val: '7',
-    btn_class: 'operand'
-  }, {
-    btn_val: '8',
-    btn_class: 'operand'
-  }, {
-    btn_val: '9',
-    btn_class: 'operand'
-  }, {
-    btn_val: '+',
-    btn_class: 'operator'
-  }]
-}
-
-var data2 = {
-  data: [{
-    btn_val: '4',
-    btn_class: 'operand'
-  }, {
-    btn_val: '5',
-    btn_class: 'operand'
-  }, {
-    btn_val: '6',
-    btn_class: 'operand'
-  }, {
-    btn_val: '-',
-    btn_class: 'operator'
-  }]
-}
-
-var data3 = {
-  data: [{
-    btn_val: '1',
-    btn_class: 'operand'
-  }, {
-    btn_val: '2',
-    btn_class: 'operand'
-  }, {
-    btn_val: '3',
-    btn_class: 'operand'
-  }, {
-    btn_val: '*',
-    btn_class: 'operator'
-  }]
-}
-
-var data4 = {
-  data: [{
-    btn_val: '0',
-    btn_class: 'operand'
-  }, {
-    btn_val: '.',
-    btn_class: 'operand'
-  }, {
-    btn_val: 'C',
-    btn_class: 'operand'
-  }, {
-    btn_val: '=',
-    btn_class: 'operator'
-  }]
-}
-
-$('.calculator').append(template(data1));
-$('.calculator').append(template(data2));
-$('.calculator').append(template(data3));
-$('.calculator').append(template(data4));
