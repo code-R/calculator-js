@@ -59,6 +59,10 @@ module.exports = function(grunt) {
       gruntfile: {
         files: ['Gruntfile.js']
       },
+      coffee: {
+        files: ['<%= config.app %>/scripts/{,*/}*.coffee'],
+        tasks: ['coffee:compile', 'autoprefixer']
+      },
       sass: {
         files: ['<%= config.app %>/styles/{,*/}*.{scss,sass}'],
         tasks: ['sass:server', 'autoprefixer']
