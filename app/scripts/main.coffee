@@ -15,7 +15,14 @@ $(".operand").click ->
   return
 
 $(".operator").click ->
+  operators = ['+', '-', '*', '=']
   btn = $(this)
+
+  cal_input = $("#cal-input").val()
+  if _.contains(operators, cal_input[cal_input.length - 1]) && _.contains(operators, btn.val())
+    alert('Invalid input')
+    return
+
   btn_function = btn.data("btn_function")
   output = calculator[btn_function](btn)
   $("#cal-input").val output
