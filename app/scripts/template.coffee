@@ -1,81 +1,83 @@
-Handlebars.registerHelper "btn_method", (data) ->
-  if data.btn_function
-    data.btn_function
-  else
-    "regular"
+'use strict';
 
-Handlebars.registerHelper "btn_class", (data) ->
-  if data.is_operator
-    "operator"
+Handlebars.registerHelper 'btn_method', (data) ->
+  if data.btnFunction
+    data.btnFunction
   else
-    "operand"
+    'regular'
+
+Handlebars.registerHelper 'btn_class', (data) ->
+  if data.isOperator
+    'operator'
+  else
+    'operand'
 
 row1 = data: [
   {
-    btn_val: "7"
+    btnVal: '7'
   }
   {
-    btn_val: "8"
+    btnVal: '8'
   }
   {
-    btn_val: "9"
+    btnVal: '9'
   }
   {
-    btn_val: "+"
-    is_operator: true
+    btnVal: '+'
+    isOperator: true
   }
 ]
 row2 = data: [
   {
-    btn_val: "4"
+    btnVal: '4'
   }
   {
-    btn_val: "5"
+    btnVal: '5'
   }
   {
-    btn_val: "6"
+    btnVal: '6'
   }
   {
-    btn_val: "-"
-    is_operator: true
+    btnVal: '-'
+    isOperator: true
   }
 ]
 row3 = data: [
   {
-    btn_val: "1"
+    btnVal: '1'
   }
   {
-    btn_val: "2"
+    btnVal: '2'
   }
   {
-    btn_val: "3"
+    btnVal: '3'
   }
   {
-    btn_val: "*"
-    is_operator: true
+    btnVal: '*'
+    isOperator: true
   }
 ]
 row4 = data: [
   {
-    btn_val: "0"
+    btnVal: '0'
   }
   {
-    btn_val: "."
+    btnVal: '.'
   }
   {
-    btn_val: "C"
-    is_operator: true
-    btn_function: "cancel"
+    btnVal: 'C'
+    isOperator: true
+    btnFunction: 'cancel'
   }
   {
-    btn_val: "="
-    is_operator: true
-    btn_function: "evaluate"
+    btnVal: '='
+    isOperator: true
+    btnFunction: 'evaluate'
   }
 ]
-source = $("#calc-btn").html()
+source = $('#calc-btn').html()
 template = Handlebars.compile(source)
-$(".calculator").append template(row1)
-$(".calculator").append template(row2)
-$(".calculator").append template(row3)
-$(".calculator").append template(row4)
+$('.calculator').append template(row1)
+$('.calculator').append template(row2)
+$('.calculator').append template(row3)
+$('.calculator').append template(row4)

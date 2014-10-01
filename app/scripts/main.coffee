@@ -1,29 +1,32 @@
+'use strict';
+
 calculator =
   evaluate: ->
-    eval $("#cal-input").val()
+    EVAL_IS_BAD__AVOID_THIS = eval
+    EVAL_IS_BAD__AVOID_THIS($('#cal-input').val());
 
   cancel: ->
-    ""
+    ''
 
   regular: (btn) ->
-    $("#cal-input").val() + btn.val()
+    $('#cal-input').val() + btn.val()
 
 
-$(".operand").click ->
-  output = $("#cal-input").val() + $(this).val()
-  $("#cal-input").val output
+$('.operand').click ->
+  output = $('#cal-input').val() + $(this).val()
+  $('#cal-input').val output
   return
 
-$(".operator").click ->
+$('.operator').click ->
   operators = ['+', '-', '*', '=']
   btn = $(this)
 
-  cal_input = $("#cal-input").val()
-  if _.contains(operators, cal_input[cal_input.length - 1]) && _.contains(operators, btn.val())
-    alert('Invalid input')
+  calInput = $('#cal-input').val()
+  if _.contains(operators, calInput[calInput.length - 1]) && _.contains(operators, btn.val())
+    window.alert('Invalid input')
     return
 
-  btn_function = btn.data("btn_function")
-  output = calculator[btn_function](btn)
-  $("#cal-input").val output
+  btnFunction = btn.data('btn_function')
+  output = calculator[btnFunction](btn)
+  $('#cal-input').val output
   return
