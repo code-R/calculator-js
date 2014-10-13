@@ -73,25 +73,16 @@ row4 = data: [
   }
 ]
 
-row0 = data: [
-  {
-    btnVal: ''
-  },
-  {
-    btnVal: ''
-  },
-  {
-    btnVal: ''
-  },
-  {
-    btnVal: '/',
-    isOperator: true
-  }
-]
+# row0 = data: [
+#   {
+#     btnVal: '/',
+#     isOperator: true
+#   }
+# ]
 
 source = $('#calc-btn').html()
 template = Handlebars.compile(source)
-$('.calculator').append template(row0)
+# $('.calculator').append template(row0)
 $('.calculator').append template(row1)
 $('.calculator').append template(row2)
 $('.calculator').append template(row3)
