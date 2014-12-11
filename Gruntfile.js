@@ -210,7 +210,7 @@ module.exports = function(grunt) {
       app: {
         ignorePath: /^\/|\.\.\//,
         src: ['<%= config.app %>/index.html'],
-        exclude: ['bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js']
+        exclude: ['/bootstrap/']
       },
       sass: {
         src: ['<%= config.app %>/styles/{,*/}*.{scss,sass}'],
@@ -392,6 +392,10 @@ module.exports = function(grunt) {
     }
   });
 
+  grunt.registerTask('jshintSingle', function(file) {
+    if (file) grunt.config('jshint.all', '<%= config.app %>/scripts/' + file);
+    grunt.task.run('jshint:all');
+  });
 
   grunt.registerTask('serve', 'start the server and preview your app, --allow-remote for remote access', function(target) {
     if (grunt.option('allow-remote')) {

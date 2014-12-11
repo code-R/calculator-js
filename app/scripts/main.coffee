@@ -6,7 +6,7 @@ calculator =
     EVAL_IS_BAD__AVOID_THIS($('#cal-input').val());
 
   cancel: ->
-    ''
+    '0'
 
   regular: (btn) ->
     $('#cal-input').val() + btn.val()
